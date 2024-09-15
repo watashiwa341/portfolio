@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    scroll-behavior: smooth; /*для плавного скрола по ссылкам по сайту*/
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.none {
+    display: none !important;
+}  /*отключаем этим классом блоки, которые не должны быть видны, добалвением none в html к блокам*/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/*header*/
+
+.header {
+    overflow: hidden;  /*элементы прописанные в header не выходят за его пределы, чтобы видео помещалась в радиус у heder НО работает только для десктопа. Поэтому для телефонов для видео мы меняем border-bottom-right-radius: 100px; */
+    position: relative;    /*добавляем для видео position -realtive*/
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom-right-radius: 100px;
+    /*background: #252525 linear-gradient(158deg, #2f2f2f 0%, #202020 100%);*/  /*когда делаем фон из видео гардиент фон не нужен, лучше указать черный (или другой) фон*/
+    background-color: #000;
+    color: #fff;
+
+}
+/*поднимает контейнер на верх, обращаюсь только к контейнеру header*/
+.header .container{
+    position: relative;
+    z-index: 9; /*поднимает видео, можно и 1 указать*/
+
+}
+.header-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*удаляет у видео полосы т.е. растягивает на весь контейнер*/
+    object-position: center; /*центрирует видео, можно применять, а можно и не применять*/
+    border-bottom-right-radius: 100px; /* см. коммент к .header - overflow ! Меняем радиус видео для мобилок, изменения вносим и media.css*/
+    opacity: 0.5; /*прозрачность видео*/
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 60px;
+}
+
+.header-img {
+    border-radius: 80px;
+}
+
+.header-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.header-text {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 300;
+}
+.header-btns {
+    display: flex;
+    column-gap: 20px;
+
+}
+.btns {
+    height: 48px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: black;
+    border-radius: 8px;
+    color: #fff;
+    line-height: 1;
+    transition: all 0.3s ease-in;
+}
+.btns:hover {
+    background-color: #61B3B0;
+}
+
+.btns-outline {
+    height: 48px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #3B3B3B;
+    border-radius: 8px;
+    color: #fff;
+    line-height: 1;
+    transition: all 0.3s ease-in;
+} 
+
+.btns-outline:hover {
+    border-color:#61B3B9;
+}
+
+/*portfolio*/
+
+.portfolio {
+    padding: 80px 0;
+}
+
+.portfolio-title {
+    margin-bottom: 65px;
+    font-size: 52px;
+    font-weight: 700;
+    text-align: center;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    align-items: center;
+
+}
+
+.project {
+    text-align: center;
+}
+
+.project-img {
+    margin-bottom: 30px;
+    border-radius: 30px;
+    transition: opacity 0.3s  ease-in;
+
+}
+
+.project-img:hover {
+    opacity: 0.8;
+}
+
+.project-title {
+    font-size: 22px;
+
+}
+
+.project-title a {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/*contacts*/
+
+.contacts {
+    padding: 80px 0;
+    border-top-left-radius: 100px;
+    background: #252525 linear-gradient(158deg, #2f2f2f 0%, #202020 100%);
+    color: #fff;
+
+}
+
+.contacts-title {
+    margin-bottom: 65px;
+    font-size: 52px;
+    font-weight: 700;
+    text-align: center;
+
+
+}
+.massangers {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.massanger {
+    flex-grow: 1;
+    padding: 46px 20px;
+    border-radius: 20px;
+    border: 1px solid #3B3B3B;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    transition: background-color 0.2s ease-in;
+
+}
+
+.massanger:hover {
+    background-color: #1E1E1E;
+}
+
+/*footer*/
+.footer {
+    padding: 30px 0;
+    background-color: #1E1E1E;
+    color: #5D5D5D;
+    
+}
+
+.footer a {
+    color: #5886A8;
+}
+
+.footer-inner {
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-inner  p + p {
+    margin-top: 15px;
+}
+
+/*inner page*/
+
+.inner-page {
+    padding: 80px 0 40px;
+}
+
+.inner-page-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    align-items: center;
+    margin-bottom:40px;
+    text-align: center;
+} 
+
+.inner-page-title {
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.inner-page-text {
+    max-width: 570px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.inner-page-link {
+    color: #000;
+
+}
+
+.inner-page-link a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.inner-page-img {
+
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.inner-page-backlink {
+  
+    max-width: 770px;
+    margin: 0 auto;
+    padding: 30px;
+
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F1F1;
+    
+    text-align: center;
+    color: #000;
+    transition: all 0.2s ease-in;
+}
+
+.inner-page-backlink:hover {
+    background-color: #a5a5a5;
+
+}
+
